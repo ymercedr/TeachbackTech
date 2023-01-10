@@ -1,2 +1,2 @@
-# TeachbackTech
- 
+# Static, Protected and Private
+
