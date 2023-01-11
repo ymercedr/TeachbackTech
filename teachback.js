@@ -17,11 +17,10 @@ var __extends = (this && this.__extends) || (function () {
 // ENCAPSULATION: group related functions and variables together -- Reduce complexity + increase reusability
 //                implementation and state of each object are privately held inside a defined boundary, or class.
 var House = /** @class */ (function () {
-    function House(rooms, bathrooms, isAvaibale) {
-        this.isAvaibale = isAvaibale;
+    function House(rooms, bathrooms, isAvailable) {
         this.rooms = rooms;
         this.bathrooms = bathrooms;
-        this.isAvaibale = isAvaibale;
+        this.isAvailable = isAvailable;
     }
     House.prototype.houseSpecs = function () {
         return this.rooms, this.bathrooms;
@@ -51,7 +50,7 @@ var car1 = new Car("Toyota", "Highlander", "white");
 // console.log(car1.rooms);
 // console.log(car1.describeHouseSpecs());
 // ABSTRACTION: hide details and complexity, show only the essentials -- Reduce complexity + isolate impact of changes
-//              all our attributes are private and cannot be accessed outside the class object.
+//              all our attributes that are private cannot be accessed outside the class object.
 // console.log(house1.rooms, house1.bathrooms);
 // console.log(house1.isAvailable);
 // console.log(house1.describeHouseSpecs());
@@ -83,8 +82,8 @@ var unEmployed = /** @class */ (function (_super) {
     return unEmployed;
 }(Person));
 var person1 = new unEmployed("John", "Doe");
-console.log(person1.getFullName());
-console.log(person1.describe());
+// console.log(person1.getFullName());
+// console.log(person1.describe());
 // POLYMOSPHISM: Allows you to specify discrete logic that is customized for each specific child class.
 var Employee = /** @class */ (function (_super) {
     __extends(Employee, _super);
@@ -99,5 +98,5 @@ var Employee = /** @class */ (function (_super) {
     return Employee;
 }(Person));
 var person2 = new Employee("Jane", "Doe", "Web Developer");
-// console.log(person2.getFullName());
-// console.log(person2.describe());
+console.log(person2.getFullName());
+console.log(person2.describe());

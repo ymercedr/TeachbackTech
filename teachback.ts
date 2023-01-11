@@ -6,10 +6,10 @@ class House {
   public bathrooms: number;
   private isAvailable: boolean;
 
-  constructor(rooms: number, bathrooms: number, private isAvaibale: boolean) {
+  constructor(rooms: number, bathrooms: number, isAvailable: boolean) {
     this.rooms = rooms;
     this.bathrooms = bathrooms;
-    this.isAvaibale = isAvaibale;
+    this.isAvailable = isAvailable;
   }
   houseSpecs() {
     return this.rooms, this.bathrooms;
@@ -44,7 +44,7 @@ const car1 = new Car("Toyota", "Highlander", "white");
 // console.log(car1.describeHouseSpecs());
 
 // ABSTRACTION: hide details and complexity, show only the essentials -- Reduce complexity + isolate impact of changes
-//              all our attributes are private and cannot be accessed outside the class object.
+//              all our attributes that are private cannot be accessed outside the class object.
 // console.log(house1.rooms, house1.bathrooms);
 // console.log(house1.isAvailable);
 // console.log(house1.describeHouseSpecs());
@@ -80,7 +80,7 @@ let person1 = new unEmployed("John", "Doe");
 
 // POLYMOSPHISM: Allows you to specify discrete logic that is customized for each specific child class.
 class Employee extends Person {
-  constructor(firstName: string, lastName: string, private jobTitle: string) {
+  constructor(firstName: string, lastName: string, public jobTitle: string) {
     super(firstName, lastName);
   }
 
